@@ -1,0 +1,34 @@
+{
+  "info": {
+    "name": "Event-Driven Order Processing System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerId\": \"customer-101\",\n  \"amount\": 149.99\n}"
+        },
+        "url": "http://localhost:8080/api/orders"
+      }
+    },
+    {
+      "name": "Get Order",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/api/orders/{{orderId}}"
+      }
+    },
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8080/actuator/health"
+      }
+    }
+  ]
+}
